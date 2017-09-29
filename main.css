@@ -23,7 +23,7 @@
 }
 body {
     padding: 0;
-    margin: 0;
+margin: 0px auto;
     text-align: center;
     font-family: Bebas;
     background-image: url(background.png)
@@ -55,9 +55,10 @@ nav ul li a:hover {
 }
 h1 {
     color: #E2392D;
-    font-size: 100px;
     padding: 0;
     margin: 0;
+	font-size: 15vw;
+
 }
 #shop {
     color: #E2392D;
@@ -68,11 +69,12 @@ h1 {
 .shop > ul li {
     display: inline-block;
     background: linear-gradient(to bottom right, #59b9b8 30%, #0e1eeb 100%);
-    margin: 0;
+margin: 0px auto;
     padding: 0;
     padding: 10px 100px;
     border-radius: 8px;
     border: 3px solid black;
+	max-width: 33%
 }
 .product-price {
     -webkit-animation: colorchange 30s infinite; /* Safari 4.0 - 8.0 */
@@ -80,6 +82,7 @@ h1 {
     border-radius: 25px;
     padding: 10px 20px;
     margin-top: 30px;
+	    border: 1px solid black;
 }
 .link-price {
     text-decoration: none;
