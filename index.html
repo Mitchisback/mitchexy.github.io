@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MITCHFINN</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#shop">SHOP</a></li>
+        <li><a href="#exy">EXY</a></li>
+        <li><a href="#about-me">ABOUT</a></li>
+        <li><a href="#live-stream">LIVE</a></li>
+    </ul>
+</nav>
+<h1>MITCHFINN</h1>
+<div class="info">
+<hr>
+</div>
+<div class="shop">
+<p  align="center" id="shop">SHOP</p>
+<ul>
+    <li>
+        <p  align="center" class="product-title">Loading...</p>
+        <hr>
+        <a href="#" class="link-price"><p align="center" class="product-price">$20</p></a>
+    </li>
+    <li id="center">
+        <p  align="center" class="product-title">Loading...</p>
+        <hr>
+        <a href="#" class="link-price"><p align="center" class="product-price">$20</p></a>
+    </li>
+    <li>
+        <p align="center" class="product-title">Loading...</p>
+        <hr>
+        <a href="#" class="link-price"><p align="center" class="product-price">$20</p></a>
+    </li>
+</ul>
+</div>
+<div class="info">
+<hr id="exy">
+<span class="exy">E</span>
+<span class="exy" id="x">X</span>
+<span class="exy">Y</span>
+<div id="movement">
+    <span id="m">M</span>
+    <span>O</span>
+    <span>V</span>
+    <span>E</span>
+    <span>M</span>
+    <span>E</span>
+    <span>N</span>
+    <span>T</span>
+</div>
+
+<p  align="center" id="exy-description">&nbsp;&nbsp;&nbsp;EXY is a movement i made in late 2016, It suddenly started gaining attention and now gaining profit. Although it had taken months of work and publishing and now we are starting up merch for a very cheap cost. </p>
+<hr>
+<p  align="center" id="about-me">ABOUT ME</p>
+<p  align="center" id="about-me-description">&nbsp;&nbsp;&nbsp;My life took a digital turn at the age of 12 and I never went back on that decision. Development has been a passion of mine&nbsp;&nbsp;&nbsp; ever since, whereas my "design drive" came a bit after I made some horrendous stuff.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<hr>
+<p  align="center" id="live-stream">Contact&nbsp; Me</p>
+<p  align="center" id="live-stream-display">Discord:&nbsp; Mitch#0329</p>
+<hr>
+</div>
+<audio autoplay="true" src="Circles.mp3" />
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+function filterPath(string) {
+    return string
+        .replace(/^\//, '')
+        .replace(/(index|default).[a-zA-Z]{3,4}$/, '')
+        .replace(/\/$/, '');
+}
+
+var locationPath = filterPath(location.pathname);
+$('a[href*="#"]').each(function() {
+    var thisPath = filterPath(this.pathname) || locationPath;
+    var hash = this.hash;
+    if ($("#" + hash.replace(/#/, '')).length) {
+        if (locationPath == thisPath && (location.hostname == this.hostname || !this.hostname) && this.hash.replace(/#/, '')) {
+            var $target = $(hash),
+                target = this.hash;
+            if (target) {
+                $(this).click(function(event) {
+                    if ($('#animation').prop('checked')) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $target.offset().top}, 1000, function() {
+                            location.hash = target;
+                            $target.focus();
+                            if ($target.is(":focus")) { //checking if the target was focused
+                                return false;
+                            } else {
+                                $target.attr('tabindex', '-1'); //Adding tabindex for elements not focusable
+                                $target.focus(); //Setting focus
+                            }
+                        });
+                    }
+                });
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>
